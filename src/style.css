@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+}
+
+.header .logo img {
+    height: 50px;
+}
+
+.header .menu {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    font-size: 18px;
+    color: #5C8002;
+    fill: #5C8002;
+}
+
+.header .menu svg {
+    height: 25px;
+    margin-left: 50px;
+}
+
+.hero-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0px 100px;
+    margin: 20px;
+}
+
+.hero-section .hero-caption {
+    padding-right: 0px;
+    padding-left: 10px;
+    margin-top: 40px;
+}
+
+.hero-section .hero-title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+
+}
+
+.hero-section .hero-title span {
+    color: #5C8002;
+}
+
+.hero-para {
+    width: 365px;
+    font-size: 16px;
+    margin-top: 20px;
+    line-height: 1.5;
+    padding-left: 5px;
+}
+
+.hero-section .search {
+    padding-left: 5px;
+    height: 50px;
+    display: flex;
+    margin-top: 20px;
+    width: 480px;
+}
+
+.hero-section .search input {
+    /* height: 40px; */
+    border: none;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    padding: 0px 40px;
+    width: 100%;
+    outline: none;
+}
+
+.hero-section .search button {
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    border: none;
+    padding: 0px 30px;
+    color: white;
+    background-color: #5C8002;
+    cursor: pointer;
+}
+
+.hero-section .search button:hover {
+    background-color: rgb(209, 207, 207);
+    color: #5C8002;
+}
+
+.about-section {
+    background-image: url('/src/assets/about-section.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.about-us {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    margin-right: 500px;
+    text-align: center;
+    padding-top: 30px;
+    color: white;
+}
+
+.about-us h1 {
+    font-size: 60px;
+    margin: 20px;
+}
+
+.about-us p {
+    margin: 0px 100px 20px 100px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.about-us img {
+    height: 100px;
+}
