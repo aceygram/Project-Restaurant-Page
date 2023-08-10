@@ -80,7 +80,8 @@
     outline: none;
 }
 
-.hero-section .search button {
+.hero-section .search button,
+.contact button {
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
     border: none;
     padding: 0px 30px;
@@ -99,7 +100,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
@@ -126,4 +127,47 @@
 
 .about-us img {
     height: 100px;
+    margin-bottom: 50px;
+}
+
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 70px 0;
+    padding: 0 40px;
+    color: #5C8002;
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-section svg {
+    transform: scale(1.5);
+
+    fill: #5C8002;
+}
+
+.info-section p {
+    margin: 10px 50px;
+}
+
+.contact input {
+    border: none;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    padding: 15px 40px;
+    outline: none;
+    margin-left: 55px;
+}
+
+.contact button {
+    padding: 15px 20px;
+    margin-left: -3px;
+}
+
+.contact p{
+    margin: 20px 55px;
+    color: #5C8002;
 }
