@@ -222,7 +222,7 @@ const info = (() =>{
         para.textContent = item;
 
         contact.appendChild(para);
-    })
+    });
 })();
 
 
