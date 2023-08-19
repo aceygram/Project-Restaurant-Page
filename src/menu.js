@@ -13,6 +13,7 @@ import menuImg11 from './assets/ice-cream-with-strawberries-chocolate-white-plat
 
 const menu = document.createElement('div');
 
+
 const menuTab = (() =>{
     const menuSection = document.createElement('div');
     menuSection.classList.add('menu-section');

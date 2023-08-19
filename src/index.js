@@ -4,13 +4,22 @@ import menu from './menu';
 import contact from './contact';
 
 
-const content = document.querySelector('#content');
-
+const content = document.getElementById('content');
 
 const head = (() => {
     const header = document.createElement('div');
     header.classList.add('header');
     content.appendChild(header);
+
+    window.addEventListener('scroll', function() {
+        const yOffset = window.scrollY;
+      
+        if (yOffset > 0) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
 
     const logo = document.createElement('div');
     logo.classList.add('logo');
@@ -20,36 +29,46 @@ const head = (() => {
     logoImg.src = img_1;
     logo.appendChild(logoImg);
 
-    //creating the menu
-    const nav = document.createElement('ul');
-    nav.classList.add('menu');
-    header.appendChild(nav);
+    // Create tab button container dynamically
+    var tabButtonContainer = document.createElement('ul');
+    tabButtonContainer.id = 'tabButtonContainer';
+    tabButtonContainer.className = 'tab';
+    header.appendChild(tabButtonContainer);
 
-    const nav1 = document.createElement('ul');
-    nav1.classList.add('menu-list');
-    nav1.textContent = 'Home';
-    nav.appendChild(nav1);
+    // Create tab buttons dynamically
+    var tabButtons = [
+        { id: 'tab1', label: 'Home' },
+        { id: 'tab2', label: 'Menu' },
+        { id: 'tab3', label: 'Contact' }
+    ];
 
-    const nav2 = document.createElement('ul');
-    nav2.classList.add('menu-list');
-    nav2.textContent = 'Menu';
-    nav.appendChild(nav2);
+    tabButtons.forEach(function(tab) {
+        var tabButton = document.createElement('li');
+        tabButton.className = 'menu-list';
+        tabButton.setAttribute('data-tab', tab.id);
+        tabButton.textContent = tab.label;
+        tabButtonContainer.appendChild(tabButton);
+    });
 
-    const nav3 = document.createElement('ul');
-    nav3.classList.add('menu-list');
-    nav3.textContent = 'Contact';
-    nav.appendChild(nav3);
+    // Create tab contents dynamically
+    var tabContents = [
+        { id: 'tab1', contents: home, active: true },
+        { id: 'tab2', contents: menu },
+        { id: 'tab3', contents: contact }
+    ];
 
-    // const navList = ['Home', 'About', 'Contact'];
+    let tabContainer = document.createElement('div');
+    tabContainer.id = 'tabContainer';
+    tabContainer.className = 'tabContainer';
+    content.appendChild(tabContainer);
 
-    // // creating the menu items
-    // navList.forEach(list => {
-    //     const li = document.createElement('li');
-    //     li.textContent = list;
-    //     li.classList.add('menu-list');
-
-    //     nav.appendChild(li);
-    // })
+    tabContents.forEach(function(tab) {
+        var tabContent = document.createElement('div');
+        tabContent.id = tab.id;
+        tabContent.className = 'tabcontent';
+        tabContent.appendChild(tab.contents);
+        tabContainer.appendChild(tabContent);
+      });
 
     //creating the svg in the header
     const cart = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -60,27 +79,33 @@ const head = (() => {
     path.setAttribute("d", "M19 6H17C17 3.2 14.8 1 12 1S7 3.2 7 6H5C3.9 6 3 6.9 3 8V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V8C21 6.9 20.1 6 19 6M12 3C13.7 3 15 4.3 15 6H9C9 4.3 10.3 3 12 3M19 20H5V8H19V20M12 12C10.3 12 9 10.7 9 9H7C7 11.8 9.2 14 12 14S17 11.8 17 9H15C15 10.7 13.7 12 12 12Z");
 
     cart.appendChild(path)
-    nav.appendChild(cart);
+    tabButtonContainer.appendChild(cart);
 
-    content.appendChild(contact);
-    nav3.setAttribute('id', 'selected');
-    
-    nav1.addEventListener('click', () => {
-            content.appendChild(home);
-            content.removeChild(menu)
-            nav2.removeAttribute('id')
-            nav1.setAttribute('id', 'selected');
-    })
+    // nav1.setAttribute('id', 'selected');
+    // content.appendChild(home);
 
-    nav2.addEventListener('click', () => {
-        content.appendChild(menu);
-        content.removeChild(home);
-        nav1.removeAttribute('id')
-        nav2.setAttribute('id', 'selected');
+ // Handle tab click event
+    var tabLinks = document.querySelectorAll('.menu-list');
+    tabLinks.forEach(function(tabLink) {
+        tabLink.addEventListener('click', function() {
+            var tabName = this.getAttribute('data-tab');
 
-})
+            // Hide all tab content
+            var tabContents = document.querySelectorAll('.tabcontent');
+            tabContents.forEach(function(tab) {
+                tab.style.display = 'none';
+            });
+
+            // Remove active class from all tab links
+            tabLinks.forEach(function(tabLink) {
+                tabLink.classList.remove('active') 
+            });
+
+            // Show the selected tab content and mark the button as active
+            document.getElementById(tabName).style.display = 'block';
+            this.classList.add('active');
+        });
+    });
+
+    tabLinks[0].click();
 })();
-
-
-
-// content.appendChild(menu);

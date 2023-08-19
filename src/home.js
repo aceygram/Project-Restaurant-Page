@@ -3,6 +3,7 @@ import img_1 from './assets/logo.png';
 
 const home = document.createElement('div');
 
+
 const hero = (() => {
     const heroSection = document.createElement('div')
     heroSection.classList.add('hero-section');

@@ -10,14 +10,29 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 100px;
-    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease; 
+    z-index: 1000;
+}
+
+.header.scrolled {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adjust the shadow effect */
+  }
+
+#content {
+    margin-top: 90px;
 }
 
 .header .logo img {
     height: 50px;
 }
 
-.header .menu {
+.header .tab {
     list-style: none;
     display: flex;
     gap: 35px;
@@ -32,7 +47,7 @@
     cursor: pointer;
 }
 
-.header .menu svg {
+.header .tab svg {
     height: 25px;
     margin-left: 50px;
 }
@@ -41,7 +56,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 0px 100px;
-    margin: 20px;
+    margin: 110px 20px 20px 20px;
 }
 
 .hero-section .hero-caption {
@@ -158,6 +173,10 @@
 
 .info-section p {
     margin: 10px 50px;
+}
+
+.contact .search {
+    display: flex;
 }
 
 .contact input {
@@ -330,12 +349,38 @@ iframe{
 }
 
 .call-us svg {
-    height: 40px;
     fill: #5C8002;
+    transform: scale(1.5);
 }
 
-#selected {
+.active {
     background:#5C8002;
     color: white;
     border-radius: 5px;
+}
+
+.tabContainer {
+    /* display: none; */
+}
+
+.tabcontent {
+    display: none;
+}
+
+.tablinks.active {
+    background-color: #ccc;
+}
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    .header {
+        padding: 20px 50px;
+    }
+
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
 }
