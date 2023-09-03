@@ -34,6 +34,11 @@ const head = (() => {
     tabButtonContainer.id = 'tabButtonContainer';
     tabButtonContainer.className = 'tab';
     header.appendChild(tabButtonContainer);
+    
+    // Create tab button container dynamically
+    var menuList = document.createElement('li');
+    menuList.className = 'hamburger-menu';
+    tabButtonContainer.appendChild(menuList);
 
     // Create tab buttons dynamically
     var tabButtons = [
@@ -43,11 +48,11 @@ const head = (() => {
     ];
 
     tabButtons.forEach(function(tab) {
-        var tabButton = document.createElement('li');
+        var tabButton = document.createElement('div');
         tabButton.className = 'menu-list';
         tabButton.setAttribute('data-tab', tab.id);
         tabButton.textContent = tab.label;
-        tabButtonContainer.appendChild(tabButton);
+        menuList.appendChild(tabButton);
     });
 
     // Create tab contents dynamically
@@ -81,6 +86,17 @@ const head = (() => {
     cart.appendChild(path)
     tabButtonContainer.appendChild(cart);
 
+    const hamburger = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    hamburger.setAttribute("id", "hamburger");
+    hamburger.setAttribute("width", "24");
+    hamburger.setAttribute("height", "24");
+
+    let path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path2.setAttribute("d", "M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z");
+
+    hamburger.appendChild(path2)
+    tabButtonContainer.appendChild(hamburger); 
+
     // nav1.setAttribute('id', 'selected');
     // content.appendChild(home);
 
@@ -104,8 +120,14 @@ const head = (() => {
             // Show the selected tab content and mark the button as active
             document.getElementById(tabName).style.display = 'block';
             this.classList.add('active');
+
+            menuList.classList.toggle('hamburger-show');
         });
     });
+
+    hamburger.addEventListener('click', () => {
+        menuList.classList.toggle('hamburger-show');
+    })
 
     tabLinks[0].click();
 })();
