@@ -94,11 +94,9 @@ const head = (() => {
     let path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path2.setAttribute("d", "M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z");
 
-    hamburger.appendChild(path2)
+    hamburger.appendChild(path2);
     tabButtonContainer.appendChild(hamburger); 
 
-    // nav1.setAttribute('id', 'selected');
-    // content.appendChild(home);
 
  // Handle tab click event
     var tabLinks = document.querySelectorAll('.menu-list');
