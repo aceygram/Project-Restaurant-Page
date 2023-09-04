@@ -234,12 +234,12 @@
 }
 
 .menu-section > h1 {
-    font-size: 50px;
+    font-size: 3.7vw;
     margin: 20px;
 }
 
 .menu-section p {
-    font-size: 18px;
+    font-size: 1.5vw;
 }
 
 .menu-section button {
@@ -272,12 +272,12 @@
 }
 
 .food-menu-list h1 {
-    font-size: 15px;
+    font-size: 1.3vw;
 }
 
 .food-menu-list p {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 2vw;
     padding: 0px 0px 20px 0px;
 }
 
@@ -314,7 +314,7 @@
 .form-section h1{
     text-align: center;
     margin: 0 0 10px 0;
-    font-size: 50px;
+    font-size: 4vw;
     letter-spacing: 3px;
 }
 
@@ -590,6 +590,36 @@ iframe{
         padding: 15px 40px;
         margin-left: 0px;
     }
+
+    .menu-section {
+        padding: 40px 30px;
+    }
+
+    .food-menu {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 30px;
+    }
+
+    .menu-section > h1 {
+        font-size: 6vw;
+    }
+    
+    .menu-section p {
+        font-size: 2.5vw;
+    }
+
+    .food-menu-list h1 {
+        font-size: 2vw;
+    }
+
+    .food-menu-list p {
+        font-size: 4vw;
+    }
+
+    .form-section h1{
+        font-size: 6vw;
+        letter-spacing: 0px;
+    }
 }
 @media only screen and (max-width: 450px){
 	/*Small smartphones [325px -> 425px]*/
@@ -646,10 +676,38 @@ iframe{
     .info-section p {
         margin: 10px 0px;
         text-align: center;
-        font-size: 4vw;
+        font-size: 3.5vw;
     }
 
     .contact .search{
         font-size: 4vw;
+    }
+
+    .food-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-section > h1 {
+        font-size: 8vw;
+    }
+    
+    .menu-section p {
+        font-size: 3.5vw;
+    }
+
+    .food-menu-list h1 {
+        font-size: 3.5vw;
+    }
+
+    .food-menu-list p {
+        font-size: 7vw;
+    }
+
+    .form-section h1{
+        font-size: 8vw;
+    }
+
+    iframe {
+        padding: 50px 30px;
     }
 }
