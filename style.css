@@ -136,7 +136,7 @@
 }
 
 .about-section {
-    background-image: url('/src/assets/about-section.jpg');
+    background-image: url('/dist/about-section.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
