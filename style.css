@@ -106,6 +106,8 @@
 
 .hero-section .search input {
     border: none;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
     padding: 0px 40px;
     width: 100%;
@@ -207,6 +209,8 @@
 
 .contact input {
     border: none;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
     padding: 15px 40px;
     outline: none;
@@ -285,7 +289,7 @@
 /*Contact Page*/
 
 .form-section {
-    background-image: url('../src/assets/pexels-elle-hughes-2696064.jpg');
+    background-image: url('pexels-elle-hughes-2696064.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
